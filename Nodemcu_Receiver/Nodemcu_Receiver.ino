@@ -32,17 +32,20 @@
 #include <ArduinoOTA.h>   // Added for OTA
 
 // --- WiFi Credentials (MUST BE FILLED IN FOR OTA) ---
-#define WIFI_SSID "mohanraj"
-#define WIFI_PASS "k70mohanraj"
+// TODO: Replace with your WiFi credentials before uploading
+#define WIFI_SSID "YOUR_WIFI_SSID_HERE"
+#define WIFI_PASS "YOUR_WIFI_PASSWORD_HERE"
 
 // --- ESP-NOW Configuration ---
+// TODO: Replace with your sender's MAC address (check sender device MAC)
 // This MAC Address MUST match the sender's MAC address
-uint8_t senderMacAddress[] = {0xF4, 0xCF, 0xA2, 0x4A, 0x4C, 0x4F};
+uint8_t senderMacAddress[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 #define WIFI_CHANNEL 1
 
 // --- OTA Configuration ---
 #define OTA_HOSTNAME "NodeMCU-WaterReceiver"
-#define OTA_PASSWORD "admin123"
+// TODO: Replace with your own OTA password for secure updates
+#define OTA_PASSWORD "YOUR_OTA_PASSWORD_HERE"
 
 // --- Hardware Pins ---
 #define GREEN_LED_PIN D5 // GPIO14

@@ -29,8 +29,11 @@ It measures and displays the water tank level, triggers alarms for high/low leve
 
 | Folder | Description |
 |--------|--------------|
-| `ESP-12F_SENDER/` | Code for ESP-12F Sender Node |
+| `ESP-12F_SENDER/` | Code for ESP-12F Sender Node (with Blynk integration) |
+| `Arduino_WebApp_Sender/` | Code for ESP8266 Sender with Supabase web integration |
 | `Nodemcu_Receiver/` | Code for NodeMCU Receiver Node |
+| `app/` | React web dashboard for monitoring water levels |
+| `supabase/` | Supabase backend configuration and functions |
 | `README.md` | Documentation (this file) |
 
 ---
@@ -99,6 +102,65 @@ Measured Distance = 25 cm
 ---
 
 ## 🧰 Installation
+
+### 🔐 Configuration (IMPORTANT - First Time Setup)
+
+Before uploading the code to your devices, you **MUST** configure the following credentials:
+
+#### For NodeMCU Receiver (`Nodemcu_Receiver/Nodemcu_Receiver.ino`)
+1. **WiFi Credentials** (lines 35-37)
+   - Replace `YOUR_WIFI_SSID_HERE` with your WiFi network name
+   - Replace `YOUR_WIFI_PASSWORD_HERE` with your WiFi password
+   
+2. **Sender MAC Address** (line 41)
+   - Replace `{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}` with your ESP-12F sender's MAC address
+   - You can find the MAC address by uploading the sender code first and checking Serial Monitor
+   
+3. **OTA Password** (line 46)
+   - Replace `YOUR_OTA_PASSWORD_HERE` with a secure password for Over-The-Air updates
+
+#### For ESP-12F Sender (`ESP-12F_SENDER/ESP-12F_SENDER.ino`)
+1. **WiFi Credentials** (lines 27-32)
+   - Replace `YOUR_WIFI_SSID_HERE` with your WiFi network name
+   - Replace `YOUR_WIFI_PASSWORD_HERE` with your WiFi password
+   
+2. **Blynk Credentials** (lines 15-24)
+   - Get your credentials from [Blynk.Cloud](https://blynk.cloud)
+   - Replace `YOUR_BLYNK_TEMPLATE_ID` with your template ID
+   - Replace `YOUR_BLYNK_TEMPLATE_NAME` with your template name
+   - Replace `YOUR_BLYNK_AUTH_TOKEN` with your auth token
+   
+3. **Receiver MAC Address** (line 49)
+   - Replace `{0x00, 0x00, 0x00, 0x00, 0x00, 0x00}` with your NodeMCU receiver's MAC address
+   
+4. **OTA Password** (line 99)
+   - Replace `YOUR_OTA_PASSWORD_HERE` with a secure password
+
+#### For Web App Sender (`Arduino_WebApp_Sender/Arduino_WebApp_Sender.ino`)
+1. **WiFi Credentials** (lines 12-13)
+   - Replace `YOUR_WIFI_SSID_HERE` with your WiFi network name
+   - Replace `YOUR_WIFI_PASSWORD_HERE` with your WiFi password
+   
+2. **Supabase Credentials** (lines 26-27)
+   - Create a free account at [Supabase](https://supabase.com)
+   - Replace `YOUR_SUPABASE_URL_HERE` with your Supabase project URL
+   - Replace `YOUR_SUPABASE_ANON_KEY_HERE` with your Supabase anonymous key
+   - Find these at: `https://supabase.com/dashboard/project/_/settings/api`
+
+#### For Web Dashboard (`app/`)
+1. **Copy the environment template**
+   ```bash
+   cd app
+   cp .env.example .env
+   ```
+   
+2. **Edit `.env` file** with your Supabase credentials
+   - Replace `your-project-id` in the URL
+   - Replace `your-supabase-anon-key-here` with your actual key
+
+⚠️ **Security Note**: Never commit the `.env` file or files with real credentials to Git!
+
+---
 
 ### 🔧 Required Libraries
 Install these in Arduino IDE:

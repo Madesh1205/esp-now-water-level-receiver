@@ -9,8 +9,9 @@
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 
-#define WIFI_SSID "mohanraj"
-#define WIFI_PASS "k70mohanraj"
+// TODO: Replace with your WiFi credentials before uploading
+#define WIFI_SSID "YOUR_WIFI_SSID_HERE"
+#define WIFI_PASS "YOUR_WIFI_PASSWORD_HERE"
 
 #define TRIG_PIN 5        // GPIO5 (D1)
 #define ECHO_PIN 4        // GPIO4 (D2)
@@ -23,8 +24,10 @@
 #define MAX_DISTANCE 450.0
 #define ULTRASONIC_TIMEOUT 30000UL
 
-#define SUPABASE_URL "https://0ec90b57d6e95fcbda19832f.supabase.co"
-#define SUPABASE_ANON_KEY "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJib2x0IiwicmVmIjoiMGVjOTBiNTdkNmU5NWZjYmRhMTk4MzJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg4ODE1NzQsImV4cCI6MTc1ODg4MTU3NH0.9I8-U0x86Ak8t2DGaIk0HfvTSLsAyzdnz-Nw00mMkKw"
+// TODO: Replace with your Supabase project URL and anonymous key
+// Get these from your Supabase project settings: https://supabase.com/dashboard/project/_/settings/api
+#define SUPABASE_URL "YOUR_SUPABASE_URL_HERE"
+#define SUPABASE_ANON_KEY "YOUR_SUPABASE_ANON_KEY_HERE"
 
 float distanceHistory[5];
 int historyIndex = 0;

@@ -12,24 +12,27 @@
 *************************************************************/
 
 // --- Build-Time Injectable Secrets ---
+// TODO: Replace with your Blynk template ID and name from https://blynk.cloud
 #ifndef BLYNK_TEMPLATE_ID
-#define BLYNK_TEMPLATE_ID "TMPL3kCRser0g"
+#define BLYNK_TEMPLATE_ID "YOUR_BLYNK_TEMPLATE_ID"
 #endif
 
 #ifndef BLYNK_TEMPLATE_NAME
-#define BLYNK_TEMPLATE_NAME "Water Level Sensor"
+#define BLYNK_TEMPLATE_NAME "YOUR_BLYNK_TEMPLATE_NAME"
 #endif
 
+// TODO: Replace with your Blynk auth token
 #ifndef BLYNK_AUTH_TOKEN
-#define BLYNK_AUTH_TOKEN "IsR6N7dR9chxhFR8zMyOpP3cIjQ4i1HJ"
+#define BLYNK_AUTH_TOKEN "YOUR_BLYNK_AUTH_TOKEN"
 #endif
 
+// TODO: Replace with your WiFi credentials
 #ifndef WIFI_SSID
-#define WIFI_SSID "mohanraj"
+#define WIFI_SSID "YOUR_WIFI_SSID_HERE"
 #endif
 
 #ifndef WIFI_PASS
-#define WIFI_PASS "k70mohanraj"
+#define WIFI_PASS "YOUR_WIFI_PASSWORD_HERE"
 #endif
 
 
@@ -44,7 +47,8 @@
 #include <EEPROM.h>
 
 // --- ESP-NOW Receiver's MAC Address ---
-uint8_t receiverMacAddress[] = {0x24, 0xD7, 0xEB, 0xF9, 0x28, 0xAE};
+// TODO: Replace with your receiver's MAC address (check receiver device MAC)
+uint8_t receiverMacAddress[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 
 // --- ESP-NOW Channel (ensure receiver uses same channel) ---
 #define WIFI_CHANNEL 1
@@ -94,7 +98,8 @@ struct EepromData {
 
 // --- OTA ---
 #define OTA_HOSTNAME "NodeMCU-WaterMonitor"
-#define OTA_PASSWORD "admin123"
+// TODO: Replace with your own OTA password for secure updates
+#define OTA_PASSWORD "YOUR_OTA_PASSWORD_HERE"
 
 // Globals
 float lastWaterLevel = -1.0;
